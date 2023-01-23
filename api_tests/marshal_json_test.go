@@ -3,8 +3,10 @@ package test
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/json-iterator/go"
 	"testing"
+
+	"github.com/simonwu-os/json-iterator-go"
+	jsoniter "github.com/simonwu-os/json-iterator-go"
 	"github.com/stretchr/testify/require"
 )
 

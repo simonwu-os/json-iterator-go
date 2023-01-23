@@ -1,3 +1,4 @@
+//go:build go1.8
 // +build go1.8
 
 package misc_tests
@@ -11,7 +12,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/json-iterator/go"
+	jsoniter "github.com/simonwu-os/json-iterator-go"
 	"github.com/stretchr/testify/require"
 )
 

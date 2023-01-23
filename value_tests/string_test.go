@@ -2,9 +2,11 @@ package test
 
 import (
 	"encoding/json"
-	"github.com/json-iterator/go"
 	"testing"
 	"unicode/utf8"
+
+	"github.com/simonwu-os/json-iterator-go"
+	jsoniter "github.com/simonwu-os/json-iterator-go"
 )
 
 func init() {

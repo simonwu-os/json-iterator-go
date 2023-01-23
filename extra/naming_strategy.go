@@ -1,9 +1,10 @@
 package extra
 
 import (
-	"github.com/json-iterator/go"
 	"strings"
 	"unicode"
+
+	jsoniter "github.com/simonwu-os/json-iterator-go"
 )
 
 // SetNamingStrategy rename struct fields uniformly
