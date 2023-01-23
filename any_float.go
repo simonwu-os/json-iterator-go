@@ -71,7 +71,7 @@ func (any *floatAny) ToFloat64() float64 {
 }
 
 func (any *floatAny) ToString() string {
-	return strconv.FormatFloat(any.val, 'E', -1, 64)
+	return strconv.FormatFloat(any.val, 'f', -1, 64)
 }
 
 func (any *floatAny) WriteTo(stream *Stream) {
