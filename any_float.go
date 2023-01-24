@@ -1,83 +1,87 @@
 package jsoniter
 
 import (
-	"strconv"
+  "strconv"
 )
 
 type floatAny struct {
-	baseAny
-	val float64
+  baseAny
+  val float64
 }
 
 func (any *floatAny) Parse() *Iterator {
-	return nil
+  return nil
 }
 
 func (any *floatAny) ValueType() ValueType {
-	return NumberValue
+  return NumberValue
 }
 
 func (any *floatAny) MustBeValid() Any {
-	return any
+  return any
 }
 
 func (any *floatAny) LastError() error {
-	return nil
+  return nil
 }
 
 func (any *floatAny) ToBool() bool {
-	return any.ToFloat64() != 0
+  return any.ToFloat64() != 0
 }
 
 func (any *floatAny) ToInt() int {
-	return int(any.val)
+  return int(any.val)
 }
 
 func (any *floatAny) ToInt32() int32 {
-	return int32(any.val)
+  return int32(any.val)
 }
 
 func (any *floatAny) ToInt64() int64 {
-	return int64(any.val)
+  return int64(any.val)
 }
 
 func (any *floatAny) ToUint() uint {
-	if any.val > 0 {
-		return uint(any.val)
-	}
-	return 0
+  if any.val > 0 {
+    return uint(any.val)
+  }
+  return 0
 }
 
 func (any *floatAny) ToUint32() uint32 {
-	if any.val > 0 {
-		return uint32(any.val)
-	}
-	return 0
+  if any.val > 0 {
+    return uint32(any.val)
+  }
+  return 0
 }
 
 func (any *floatAny) ToUint64() uint64 {
-	if any.val > 0 {
-		return uint64(any.val)
-	}
-	return 0
+  if any.val > 0 {
+    return uint64(any.val)
+  }
+  return 0
 }
 
 func (any *floatAny) ToFloat32() float32 {
-	return float32(any.val)
+  return float32(any.val)
 }
 
 func (any *floatAny) ToFloat64() float64 {
-	return any.val
+  return any.val
 }
 
 func (any *floatAny) ToString() string {
-	return strconv.FormatFloat(any.val, 'f', -1, 64)
+  format_flag := byte('E')
+  ///replaced by simon change format from 'E' to 'f' 2022.1.23
+  format_flag = 'f'
+  ///end of added by simon.
+  return strconv.FormatFloat(any.val, format_flag, -1, 64)
 }
 
 func (any *floatAny) WriteTo(stream *Stream) {
-	stream.WriteFloat64(any.val)
+  stream.WriteFloat64(any.val)
 }
 
 func (any *floatAny) GetInterface() interface{} {
-	return any.val
+  return any.val
 }
