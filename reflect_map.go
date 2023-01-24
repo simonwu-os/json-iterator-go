@@ -296,7 +296,8 @@ func (encoder *sortKeysMapEncoder) Encode(ptr unsafe.Pointer, stream *Stream) {
   ///added by simon. fix sorted map with indent bug 2023.1.24
   cur_idention := stream.indention
   subStream.indention = cur_idention
-  ///end of added.
+  ///end of added 2023.1.24.
+
   subIter := stream.cfg.BorrowIterator(nil)
   keyValues := encodedKeyValues{}
   for mapIter.HasNext() {
